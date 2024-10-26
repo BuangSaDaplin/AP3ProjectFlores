@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Home</title>
+    <style>
+        body {
+            background-image: url('Home Page BGP.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            display: flex;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid #000000;
+            width: 330px;
+            height: 600px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px; /* Space between container and footer */
+            margin-top: 20px;
+        }
+
+        .container button {
+            width: 100%;
+            max-width: 250px;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 8px;
+            transition: color 0.75s ease;
+        }
+
+        .container button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 0;
+            font-size: 0.9em;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p><b>Name: Kit C. Flores<br>Course/Year/Section: BSIS 3-A</b></p>
+        <button onclick="location.href='Curriculum Vitae.html'">1. Curriculum Vitae</button>
+        <button onclick="location.href='The Use of Variables.html'">2. The Use of Variables</button>
+        <button onclick="location.href='Manipulating Numbers.html'">3. Manipulating Numbers</button>
+        <button onclick="location.href='Using Math Functions.html'">4. Using Math Functions</button>
+        <button onclick="location.href='Using Constants.html'">5. Using Constants</button>
+        <button onclick="location.href='Selection Statements.html'">6. Selection Statements</button>
+        <button onclick="location.href='Loop Statements.html'">7. Loop Statements</button>
+        <button onclick="location.href='User-defined Functions.html'">8. User-defined Functions</button>
+        <button onclick="location.href='Single-dimensional Array.html'">9. Single-dimensional Array</button>
+        <button onclick="location.href='Two-dimensional Array.html'">10. Two-dimensional Array</button>
+    </div>
+    <div class="footer">
+        <p>Created by Kit C. Flores</p>
+        <p>Date Created: October 2024</p>
+    </div>
+</body>
+</html>

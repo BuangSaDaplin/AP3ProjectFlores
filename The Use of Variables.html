@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2. The Use of Variables</title>
+    <style>
+        /* Basic styling */
+        body {
+            background-image: url('Home Page BGP.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0; /* Light grey background */
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items horizontally */
+            min-height: 100vh; /* Ensure body fills the screen */
+        }
+
+        /* Title styling */
+        .title {
+            font-size: 2.5em; /* Increase font size */
+            font-weight: bold;
+            text-align: center; /* Center the title */
+            color: #333;
+            margin: 20px 0; /* Space around the title */
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        /* Content container */
+        .content-container {
+            background-color: #ffffff;
+            width: 650px;
+            height: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0 auto 20px; /* Center container and space below */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align button inside */
+        }
+
+        /* Inner container for columns */
+        .columns-container {
+            display: flex;
+            width: 100%; /* Take full width of the container */
+        }
+
+        /* Left and Right Columns */
+        .left-column, .right-column {
+            flex: 1; /* Make both columns take equal width */
+            padding: 10px; /* Space within each column */
+        }
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 0; /* Adjust padding for footer */
+            font-size: 0.9em;
+            width: 100%;
+            margin: 0; /* Ensure no margin */
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto 0; /* Center horizontally */
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 250px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 8px;
+            transition: color 0.75s ease;
+        }
+
+        .back-button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        h1, h2 {
+            color: #333; /* Dark text for headings */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">The Use of Variables</h1> <!-- Title centered above the container -->
+
+    <div class="content-container">
+        <div class="columns-container">
+            <div class="left-column">
+                <h2>Whole Numbers:</h2>
+                <?php
+                    // Declare variables
+                    $wholeNumbers = [5, 10, 15, 20, 25];
+                    foreach ($wholeNumbers as $index => $num) {
+                        echo "Item $index: $num<br>";
+                    }
+                ?>
+
+                <h2><br><br>Floating Point Numbers:</h2>
+                <?php
+                    $floatNumbers = [3.14, 1.68, 2.71, 9.81, 0.577];
+                    foreach ($floatNumbers as $index => $num) {
+                        echo "Item $index: $num<br>";
+                    }
+                ?>
+            </div>
+
+            <div class="right-column">
+                <h2>Strings:</h2>
+                <?php
+                    $strings = ["Apple", "Banana", "Orange", "Grapes", "Peach"];
+                    foreach ($strings as $index => $str) {
+                        echo "Item $index: $str<br>";
+                    }
+                ?>
+
+                <h2><br><br>Characters:</h2>
+                <?php
+                    $characters = ['A', 'B', 'C', 'D', 'E'];
+                    foreach ($characters as $index => $char) {
+                        echo "Item $index: $char<br>";
+                    }
+                ?>
+            </div>
+        </div>
+
+        <button class="back-button" onclick="location.href='index.html'">Back to Home</button>
+    </div>
+
+    <div class="footer">
+        <p>Created by Kit C. Flores</p>
+        <p>Date Created: October 2024</p>
+    </div>
+</body>
+</html>

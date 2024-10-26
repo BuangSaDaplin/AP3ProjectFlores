@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5. Using Constants</title>
+    <style>
+        body {
+            background-image: url('Home Page BGP.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0; /* Remove padding to ensure footer fits edge to edge */
+            display: flex;
+            flex-direction: column; /* Allow footer to stay below the content */
+            min-height: 100vh; /* Ensure body fills the screen */
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 560px;
+            height: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto; /* Center the container */
+            flex: 1; /* Allow the container to grow and take available space */
+            margin-bottom: 20px; /* Space between container and footer */
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .back-button {
+            display: block; /* Center the button */
+            margin: 20px auto 0; /* Margin at top and bottom */
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 250px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: color 0.75s ease;
+            z-index: 1;
+        }
+
+        .back-button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 0;
+            font-size: 0.9em;
+            width: 100%;
+            position: relative; /* Ensure footer is positioned below content */
+            bottom: 0; /* Stick it to the bottom */
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Using Constants</h1>
+        <?php
+            define("PI", 3.14159);  // Circle calculations
+            define("E", 2.718);  // Natural logarithms
+            define("GRAVITY", 9.81);  // Earth's gravitational acceleration
+            define("SPEED_OF_LIGHT", 299792458);  // m/s in vacuum
+            define("AVOGADRO", 6.022e23);  // Atoms/mol
+            define("GAS_CONSTANT", 8.314);  // J/(mol K)
+            define("BOLTZMANN", 1.380649e-23);  // J/K
+            define("PLANCK", 6.626e-34);  // J s
+            define("ELECTRON_CHARGE", 1.602176634e-19);  // Coulombs
+            define("EARTH_RADIUS", 6371);  // km
+
+            // Display and use each constant
+            echo "Pi (used in circle calculations): " . PI . "<br><br>";
+            echo "Euler's Number (used in exponential functions): " . E . "<br><br>";
+            echo "Gravity (used in physics calculations): " . GRAVITY . " m/s²<br><br>";
+            echo "Speed of Light (used in relativity): " . SPEED_OF_LIGHT . " m/s<br><br>";
+            echo "Avogadro's Number (atoms per mole): " . AVOGADRO . "<br><br>";
+            echo "Gas Constant (ideal gas law): " . GAS_CONSTANT . " J/(mol·K)<br><br>";
+            echo "Boltzmann Constant (statistical mechanics): " . BOLTZMANN . " J/K<br><br>";
+            echo "Planck's Constant (quantum mechanics): " . PLANCK . " J·s<br><br>";
+            echo "Electron Charge (fundamental charge): " . ELECTRON_CHARGE . " C<br><br>";
+            echo "Earth Radius (used in geophysics): " . EARTH_RADIUS . " km<br>";
+        ?>
+        <button class="back-button" onclick="location.href='index.html'">Back to Home</button>
+    </div>
+    <div class="footer">
+        <p>Created by Kit C. Flores</p>
+        <p>Date Created: October 2024</p>
+    </div>
+</body>
+</html>

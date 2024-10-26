@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8. User-defined Functions</title>
+    <style>
+        body {
+            background-image: url('Home Page BGP.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0; /* Remove padding to ensure footer fits edge to edge */
+            display: flex;
+            flex-direction: column; /* Allow footer to stay below the content */
+            min-height: 100vh; /* Ensure body fills the screen */
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 560px;
+            height: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto; /* Center the container */
+            flex: 1; /* Allow the container to grow and take available space */
+            margin-bottom: 20px; /* Space between container and footer */
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .back-button {
+            display: block; /* Center the button */
+            margin: 20px auto 0; /* Margin at top and bottom */
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 250px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: color 0.75s ease;
+            z-index: 1;
+        }
+
+        .back-button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 0;
+            font-size: 0.9em;
+            width: 100%;
+            position: relative; /* Ensure footer is positioned below content */
+            bottom: 0; /* Stick it to the bottom */
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User-defined Functions</h1>
+        <h2>Problem: Basic Calculator and Number Operations</h2>
+        <p>This solution includes ten user-defined functions to perform basic mathematical operations, factorial calculation, and number properties.</p>
+        
+        <?php
+            // Define functions
+            function add($a, $b) { return $a + $b; }
+            function subtract($a, $b) { return $a - $b; }
+            function multiply($a, $b) { return $a * $b; }
+            function divide($a, $b) { return $b ? $a / $b : "Division by zero error"; }
+            function factorial($num) {
+                $result = 1;
+                for ($i = 1; $i <= $num; $i++) {
+                    $result *= $i;
+                }
+                return $result;
+            }
+            function is_even($num) { return $num % 2 == 0; }
+            function is_odd($num) { return $num % 2 != 0; }
+            function is_prime($num) {
+                if ($num < 2) return false;
+                for ($i = 2; $i <= sqrt($num); $i++) {
+                    if ($num % $i == 0) return false;
+                }
+                return true;
+            }
+            function power($base, $exponent) { return pow($base, $exponent); }
+            function square_root($num) { return sqrt($num); }
+
+            // Display function demonstrations
+            echo "<h3>Function Demonstrations</h3>";
+            echo "Addition (3 + 5): " . add(3, 5) . "<br>";
+            echo "Subtraction (10 - 4): " . subtract(10, 4) . "<br>";
+            echo "Multiplication (7 * 6): " . multiply(7, 6) . "<br>";
+            echo "Division (20 / 4): " . divide(20, 4) . "<br>";
+            echo "Factorial of 5: " . factorial(5) . "<br>";
+            echo "Is 8 Even?: " . (is_even(8) ? "Yes" : "No") . "<br>";
+            echo "Is 7 Odd?: " . (is_odd(7) ? "Yes" : "No") . "<br>";
+            echo "Is 13 Prime?: " . (is_prime(13) ? "Yes" : "No") . "<br>";
+            echo "Power (3^4): " . power(3, 4) . "<br>";
+            echo "Square Root of 25: " . square_root(25) . "<br>";
+        ?>
+
+        <button class="back-button" onclick="location.href='index.html'">Back to Home</button>
+    </div>
+    <div class="footer">
+        <p>Created by Kit C. Flores</p>
+        <p>Date Created: October 2024</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3. Manipulating Numbers</title>
+    <style>
+        /* Basic styling */
+        body {
+            background-image: url('Home Page BGP.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Container styling */
+        .cv-container {
+            background-color: #ffffff;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            flex: 1;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        .back-button {
+            display: block; /* Center the button */
+            margin: 20px auto 0; /* Margin at top and bottom */
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 250px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 8px;
+            transition: color 0.75s ease;
+            z-index: 1;
+        }
+
+        .back-button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 0;
+            font-size: 0.9em;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <h1>Manipulating Numbers</h1>
+        <?php
+            // Grades for Midterm period
+            $midtermQuizGrades = [85, 90, 78];
+            $midtermProjectGrades = [88, 92];
+            $midtermExamGrade = 86;
+
+            // Grades for Tentative Final period
+            $finalQuizGrades = [80, 88, 84];
+            $finalProjectGrades = [90, 94];
+            $finalExamGrade = 89;
+
+            // Function to calculate grading period score
+            function calculateGrade($quizGrades, $projectGrades, $examGrade) {
+                $quizAvg = array_sum($quizGrades) / count($quizGrades);
+                $projectAvg = array_sum($projectGrades) / count($projectGrades);
+                return $quizAvg * 0.3 + $projectAvg * 0.2 + $examGrade * 0.5;
+            }
+
+            // Calculate midterm and tentative final grades
+            $midtermGrade = calculateGrade($midtermQuizGrades, $midtermProjectGrades, $midtermExamGrade);
+            $tentativeFinalGrade = calculateGrade($finalQuizGrades, $finalProjectGrades, $finalExamGrade);
+
+            // Calculate final-final grade
+            $finalFinalGrade = ($midtermGrade + $tentativeFinalGrade) / 2;
+
+            // Display Midterm grades
+            echo "<h2>Midterm Grades</h2>";
+            echo "<strong>Quizzes:</strong><br>";
+            foreach ($midtermQuizGrades as $index => $grade) {
+                echo "Quiz " . ($index + 1) . ": $grade<br>";
+            }
+            echo "Average Quiz Grade: " . (array_sum($midtermQuizGrades) / count($midtermQuizGrades)) . "<br><br>";
+
+            echo "<strong>Projects:</strong><br>";
+            foreach ($midtermProjectGrades as $index => $grade) {
+                echo "Project " . ($index + 1) . ": $grade<br>";
+            }
+            echo "Average Project Grade: " . (array_sum($midtermProjectGrades) / count($midtermProjectGrades)) . "<br><br>";
+
+            echo "<strong>Exam Grade:</strong> $midtermExamGrade<br>";
+            echo "Midterm Grade: $midtermGrade<br><br>";
+
+            // Display Tentative Final grades
+            echo "<h2>Tentative Final Grades</h2>";
+            echo "<strong>Quizzes:</strong><br>";
+            foreach ($finalQuizGrades as $index => $grade) {
+                echo "Quiz " . ($index + 1) . ": $grade<br>";
+            }
+            echo "Average Quiz Grade: " . (array_sum($finalQuizGrades) / count($finalQuizGrades)) . "<br><br>";
+
+            echo "<strong>Projects:</strong><br>";
+            foreach ($finalProjectGrades as $index => $grade) {
+                echo "Project " . ($index + 1) . ": $grade<br>";
+            }
+            echo "Average Project Grade: " . (array_sum($finalProjectGrades) / count($finalProjectGrades)) . "<br><br>";
+
+            echo "<strong>Exam Grade:</strong> $finalExamGrade<br>";
+            echo "Tentative Final Grade: $tentativeFinalGrade<br><br>";
+
+            // Display Final-Final Grade
+            echo "<h2>Final-Final Grade</h2>";
+            echo "Final-Final Grade: $finalFinalGrade<br>";
+        ?>
+
+        <button class="back-button" onclick="location.href='index.html'">Back to Home</button>
+    </div>
+    <div class="footer">
+        <p>Created by Kit C. Flores</p>
+        <p>Date Created: October 2024</p>
+    </div>
+</body>
+</html>

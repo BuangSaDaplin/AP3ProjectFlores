@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10. Two-dimensional Array</title>
+    <style>
+        body {
+            background-image: url('Home Page BGP.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0; /* Remove padding to ensure footer fits edge to edge */
+            display: flex;
+            flex-direction: column; /* Allow footer to stay below the content */
+            min-height: 100vh; /* Ensure body fills the screen */
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 560px;
+            height: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto; /* Center the container */
+            flex: 1; /* Allow the container to grow and take available space */
+            margin-bottom: 20px; /* Space between container and footer */
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .back-button {
+            display: block; /* Center the button */
+            margin: 20px auto 0; /* Margin at top and bottom */
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 250px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: color 0.75s ease;
+            z-index: 1;
+        }
+
+        .back-button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 0;
+            font-size: 0.9em;
+            width: 100%;
+            position: relative; /* Ensure footer is positioned below content */
+            bottom: 0; /* Stick it to the bottom */
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Two-dimensional Array</h1>
+
+        <?php
+            $N = 3;
+            $matrix = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ];
+
+            // Initialize sums, min and max arrays
+            $rowSums = array_fill(0, $N, 0);
+            $colSums = array_fill(0, $N, 0);
+            $rowMins = array_fill(0, $N, PHP_INT_MAX);
+            $rowMaxs = array_fill(0, $N, PHP_INT_MIN);
+            $colMins = array_fill(0, $N, PHP_INT_MAX);
+            $colMaxs = array_fill(0, $N, PHP_INT_MIN);
+            $diagonal1Sum = 0;
+            $diagonal2Sum = 0;
+
+            // Calculate sums, averages, and min/max values
+            $overallSum = 0;
+            $overallMin = PHP_INT_MAX;
+            $overallMax = PHP_INT_MIN;
+
+            for ($i = 0; $i < $N; $i++) {
+                for ($j = 0; $j < $N; $j++) {
+                    $value = $matrix[$i][$j];
+
+                    // Row and column sums
+                    $rowSums[$i] += $value;
+                    $colSums[$j] += $value;
+
+                    // Row min and max
+                    if ($value < $rowMins[$i]) $rowMins[$i] = $value;
+                    if ($value > $rowMaxs[$i]) $rowMaxs[$i] = $value;
+
+                    // Column min and max
+                    if ($value < $colMins[$j]) $colMins[$j] = $value;
+                    if ($value > $colMaxs[$j]) $colMaxs[$j] = $value;
+
+                    // Diagonal sums
+                    if ($i === $j) $diagonal1Sum += $value; // Primary diagonal
+                    if ($i + $j === $N - 1) $diagonal2Sum += $value; // Secondary diagonal
+
+                    // Overall calculations
+                    $overallSum += $value;
+                    if ($value < $overallMin) $overallMin = $value;
+                    if ($value > $overallMax) $overallMax = $value;
+                }
+            }
+
+            // Display results
+            echo "<h2>Matrix:</h2><pre class='center'>";
+            print_r($matrix);
+            echo "</pre>";
+
+            echo "<h2>Row Sums:</h2>";
+            echo "<div class='center'>";
+            foreach ($rowSums as $sum) {
+                echo "$sum<br>";
+            }
+            echo "</div>";
+
+            echo "<h2>Row Averages:</h2>";
+            echo "<div class='center'>";
+            foreach ($rowSums as $sum) {
+                echo ($N > 0 ? $sum / $N : 0) . "<br>"; // Corrected average calculation
+            }
+            echo "</div>";
+
+            echo "<h2>Column Sums:</h2>";
+            echo "<div class='center'>";
+            foreach ($colSums as $sum) {
+                echo "$sum<br>";
+            }
+            echo "</div>";
+
+            echo "<h2>Column Averages:</h2>";
+            echo "<div class='center'>";
+            foreach ($colSums as $sum) {
+                echo ($N > 0 ? $sum / $N : 0) . "<br>"; // Corrected average calculation
+            }
+            echo "</div>";
+
+            echo "<h2>Diagonal Sums:</h2>";
+            echo "<div class='center'>";
+            echo "Primary Diagonal: $diagonal1Sum<br>";
+            echo "Secondary Diagonal: $diagonal2Sum<br>";
+            echo "</div>";
+
+            echo "<h2>Row Min/Max:</h2>";
+            echo "<div class='center'>";
+            for ($i = 0; $i < $N; $i++) {
+                echo "Row $i: Min: $rowMins[$i], Max: $rowMaxs[$i]<br>";
+            }
+            echo "</div>";
+
+            echo "<h2>Column Min/Max:</h2>";
+            echo "<div class='center'>";
+            for ($j = 0; $j < $N; $j++) {
+                echo "Column $j: Min: $colMins[$j], Max: $colMaxs[$j]<br>";
+            }
+            echo "</div>";
+
+            echo "<h2>Overall:</h2>";
+            echo "<div class='center'>";
+            echo "Sum: $overallSum<br>";
+            echo "Average: " . ($overallSum / ($N * $N)) . "<br>";
+            echo "Smallest: $overallMin<br>";
+            echo "Largest: $overallMax<br>";
+            echo "</div>";
+        ?>
+
+        <button class="back-button" onclick="location.href='index.html'">Back to Home</button>
+    </div>
+    <div class="footer">
+        <p>Created by Kit C. Flores</p>
+        <p>Date Created: October 2024</p>
+    </div>
+</body>
+</html>

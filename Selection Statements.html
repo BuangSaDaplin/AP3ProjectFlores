@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6. Selection Statements</title>
+    <style>
+        body {
+            background-image: url('Home Page BGP.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0; /* Remove padding to ensure footer fits edge to edge */
+            display: flex;
+            flex-direction: column; /* Allow footer to stay below the content */
+            min-height: 100vh; /* Ensure body fills the screen */
+            
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 500px;
+            height: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto; /* Center the container */
+            flex: 1; /* Allow the container to grow and take available space */
+            margin-bottom: 20px; /* Space between container and footer */
+            margin-top: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .back-button {
+            display: block; /* Center the button */
+            margin: 20px auto 0; /* Margin at top and bottom */
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 250px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 8px;
+            transition: color 0.75s ease;
+            z-index: 1;
+        }
+
+        .back-button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 0;
+            font-size: 0.9em;
+            width: 100%;
+            position: relative; /* Ensure footer is positioned below content */
+            bottom: 0; /* Stick it to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selection Statements</h1>
+        <?php
+            // Initialize strings and integers
+            $strings = ["Peach", "Banana", "Apple", "Grapes", "Mango"];
+            $numbers = [45, 67, 89, 12, 34];
+
+            // Sort strings in ascending order without predefined functions
+            for ($i = 0; $i < count($strings); $i++) {
+                for ($j = $i + 1; $j < count($strings); $j++) {
+                    if ($strings[$i] > $strings[$j]) {
+                        $temp = $strings[$i];
+                        $strings[$i] = $strings[$j];
+                        $strings[$j] = $temp;
+                    }
+                }
+            }
+            echo "<br>Strings in Ascending Order: <br>" . implode(", ", $strings) . "<br><br><br>";
+
+            // Sort strings in descending order without predefined functions
+            for ($i = 0; $i < count($strings); $i++) {
+                for ($j = $i + 1; $j < count($strings); $j++) {
+                    if ($strings[$i] < $strings[$j]) {
+                        $temp = $strings[$i];
+                        $strings[$i] = $strings[$j];
+                        $strings[$j] = $temp;
+                    }
+                }
+            }
+            echo "Strings in Descending Order: <br>" . implode(", ", $strings) . "<br><br><br>";
+
+            // Check divisibility condition for numbers
+            if ($numbers[0] % $numbers[4] === 0) {
+                // Calculate sum, product, and average
+                $sum = 0;
+                $product = 1;
+                foreach ($numbers as $number) {
+                    $sum += $number;
+                    $product *= $number;
+                }
+                $average = $sum / count($numbers);
+                echo "Sum: $sum, Product: $product, Average: $average<br>";
+            } else {
+                // Sort numbers in ascending order without predefined functions
+                for ($i = 0; $i < count($numbers); $i++) {
+                    for ($j = $i + 1; $j < count($numbers); $j++) {
+                        if ($numbers[$i] > $numbers[$j]) {
+                            $temp = $numbers[$i];
+                            $numbers[$i] = $numbers[$j];
+                            $numbers[$j] = $temp;
+                        }
+                    }
+                }
+                echo "Numbers in Ascending Order: <br>" . implode(", ", $numbers) . "<br><br><br>";
+            }
+        ?>
+
+        <button class="back-button" onclick="location.href='index.html'">Back to Home</button>
+    </div>
+    <div class="footer">
+        <p>Created by Kit C. Flores</p>
+        <p>Date Created: October 2024</p>
+    </div>
+</body>
+</html>

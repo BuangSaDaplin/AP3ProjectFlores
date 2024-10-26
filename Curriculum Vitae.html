@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <style>
+        /* Basic styling */
+        body {
+            background-image: url('Home Page BGP.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0; /* Remove padding to ensure footer fits edge to edge */
+            display: flex;
+            flex-direction: column; /* Allow footer to stay below the content */
+            min-height: 100vh; /* Ensure body fills the screen */
+        }
+
+        /* CV container */
+        .cv-container {
+            background-color: #ffffff;
+            width: 800px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto; /* Center the container */
+            flex: 1; /* Allow the container to grow and take available space */
+            margin-bottom: 20px; /* Space between container and footer */
+            margin-top: 20px;
+        }
+
+        /* Profile picture */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Header styling */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Section styling */
+        .section {
+            margin-top: 20px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section p, .section ul {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        /* List styling */
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* Contact info styling */
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            display: block; /* Center the button */
+            margin: 20px auto 0; /* Margin at top and bottom */
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 250px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 8px;
+            transition: color 0.75s ease;
+            z-index: 1;
+        }
+
+        .back-button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 0;
+            font-size: 0.9em;
+            width: 100%;
+            position: relative; /* Ensure footer is positioned below content */
+            bottom: 0; /* Stick it to the bottom */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+
+        <!-- Header -->
+        <div class="header">
+            <img src="Me.jpg" alt="Your Photo" class="profile-pic">
+            <h1>Kit C. Flores</h1>
+            <p>Student</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="section contact-info">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:kitcalboneroflores@gmail.com">kitcalboneroflores@gmail.com</a></p>
+            <p>Phone: (+63) 929-760-9565</p>
+            <p>FB Profile: <a href="https://web.facebook.com/keith.calbo.nero/" target="_blank">facebook.com/keith.calbo.nero/</a></p>
+            <p>Address: Purok Bombshell, Babag 1, Lapu-Lapu City, Cebu</p>
+        </div><br>
+
+        <!-- About Me -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Hard working, proactive, and ambitious. Eager to keep growing and evolving in my studies and constantly developing new skills and abilities.</p>
+        </div><br>
+
+        <!-- Education -->
+        <div class="section">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Elementary</strong> - Babag 1 Elementary School, 2016</li>
+                <li><strong>High School</strong> - Babag National High School, 2020</li>
+                <li><strong>Senior High School, TVL</strong> - Babag National High School, 2022</li>
+            </ul>
+        </div><br>
+
+        <!-- Competences -->
+        <div class="section">
+            <h2>Competences</h2>
+            <ul>
+                <li>Java Programming</li>
+                <li>HTML Programming</li>
+                <li>Familiarity with MySQL Tools</li>
+            </ul>
+        </div><br>
+
+        <!-- Languages -->
+        <div class="section">
+            <h2>Languages</h2>
+            <ul>
+                <li>English - Intermediate</li>
+                <li>Filipino - Intermediate</li>
+                <li>Bisaya - Native</li>
+            </ul>
+        </div><br>
+
+        <!-- References -->
+        <div class="section">
+            <h2>References</h2>
+            <p>Name: Mrs. Janeth Ugang</p>
+            <p>Job Title: Professor</p>
+            <p>Organization: Cebu Technological University - Main Campus</p>
+            <p>Relationship: Teacher</p>
+        </div>
+
+        <button class="back-button" onclick="location.href='index.html'">Back to Home</button>
+    </div>
+
+    <div class="footer">
+        <p>Created by Kit C. Flores</p>
+        <p>Date Created: October 2024</p>
+    </div>
+</body>
+</html>
